@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lívia Neri Lima</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Logo fade-in animation */
+    .logo {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Slide-up animation for body text */
+    .body-text {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .body-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gallery image fade-in animation */
+    .gallery-img {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    .gallery-img.visible {
+      opacity: 1;
+    }
+
+    /* Menu toggle animation */
+    #menu {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #menu.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="https://via.placeholder.com/50" alt="Logo" class="logo w-12 h-12 mr-4">
+        <h1 class="text-xl font-semibold">Lívia Neri Lima</h1>
+      </div>
+      <button id="menu-toggle" class="text-2xl md:hidden">☰</button>
+      <nav id="menu" class="md:flex hidden md:static absolute top-16 right-0 bg-white md:bg-transparent w-64 md:w-auto transform translate-x-full md:transform-none">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0">
+          <li><a href="#home" class="hover:text-gray-600">Home</a></li>
+          <li><a href="#corpo" class="hover:text-gray-600">Corpo</a></li>
+          <li><a href="#galeria" class="hover:text-gray-600">Galeria</a></li>
+          <li><a href="#contato" class="hover:text-gray-600">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Corpo -->
+  <section id="corpo" class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="body-text">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 1" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-lg font-semibold mb-2">Título 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="body-text">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 2" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-lg font-semibold mb-2">Título 2</h2>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="body-text">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 3" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-lg font-semibold mb-2">Título 3</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section id="galeria" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl font-semibold mb-8 text-center">Galeria</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="https://via.placeholder.com/200" alt="Galeria 1" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 2" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 3" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 4" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 5" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 6" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 7" class="gallery-img w-full h-48 object-cover">
+      <img src="https://via.placeholder.com/200" alt="Galeria 8" class="gallery-img w-full h-48 object-cover">
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl font-semibold mb-8 text-center">Contato</h2>
+    <div class="max-w-md mx-auto">
+      <input type="text" id="name" placeholder="Seu Nome" class="w-full p-2 mb-4 border rounded">
+      <textarea id="message" placeholder="Sua Mensagem" class="w-full p-2 mb-4 border rounded h-32"></textarea>
+      <button id="whatsapp-btn" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Enviar via WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>Lívia Neri Lima</p>
+      <p>IAPE - Instituto Adventista Pernambucano do Ensino</p>
+      <p>BR 232, KM 91, CEP 55.695-000, Saíre, PE</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+      menu.classList.toggle('translate-x-full');
+    });
+
+    // Scroll animation for body text
+    const bodyTexts = document.querySelectorAll('.body-text');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    bodyTexts.forEach(text => observer.observe(text));
+
+    // Gallery image animation
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const galleryObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    galleryImages.forEach(img => galleryObserver.observe(img));
+
+    // WhatsApp button
+    document.getElementById('whatsapp-btn').addEventListener('click', () => {
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+      const whatsappMessage = `Olá, meu nome é ${name}. Mensagem: ${message}`;
+      const url = `https://wa.me/+5582993041251?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
